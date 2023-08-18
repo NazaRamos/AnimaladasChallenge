@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    min-height: 15vh;
+    background-color: lightblue;
+}
+
+main{
+    min-height: 80vh;
+    background-color: lightcoral;
+}
+
+footer{
+    min-height: 5vh;
+    background-color: lightcyan;
+}
