@@ -1,20 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animaladas||Inicio</title>
-    <link rel="stylesheet" href="./assets/styles/estilo.css">
+    <title>Pet Shop - Tienda de Mascotas</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="shortcut icon" href="./assets/images/pngwing.com.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Indie+Flower&family=Titan+One&family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-
+    <header class="text-white text-center py-4">
+        <div class="DivHeader">  
+            
+            <img class="imgHeader" src="./assets/images/titulo.png" alt="">
+        </div>
     </header>
+    <nav class="navbar navbar-expand-lg d-flex justify-content-center" id="nav">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Farmacia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Juguetes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contacto</a>
+            </li>
+          </ul>
+    </nav>
     <main>
-
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./assets/images/foto1.jpg" class="img1 d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/foto2.jpg" class="img2 d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/images/foto3.jpg" class="img3 d-block w-100" alt="...">
+              </div>      
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="historia container my-5">
+            <h1 class="text-center">BIENVENIDO A NUESTRO PET SHOP !</h1>
+            <h3 class="text-center">Nuestros Historia</h3>
+            <p>En Pet Shop, nos apasionan los animales y creemos que merecen la mejor atención y cuidado posible. Fundada en el corazón de la ciudad, nuestra tienda ha estado sirviendo a la comunidad durante más de una década. Desde el principio, nos hemos comprometido a proporcionar productos y servicios de alta calidad para todas las mascotas.</p>
+            <p>Nuestro equipo de expertos en mascotas está dedicado a brindar a los propietarios la orientación y los productos adecuados para el bienestar de sus amigos peludos. Ya sea que esté buscando alimentos saludables, juguetes interactivos o asesoramiento sobre el cuidado general, estamos aquí para ayudar.</p>
+            <p>Estamos orgullosos de ser un lugar donde los dueños de mascotas pueden encontrar todo lo que necesitan en un solo lugar. ¡Gracias por ser parte de la familia de Pet Shop y confiar en nosotros para cuidar de sus queridas mascotas!</p>
+        </div>     
     </main>
     <footer>
-        
+      <a href="">
+        <img src="./assets/images/whatsapp.png" alt="facebook_logo_link"></a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
