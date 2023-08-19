@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{  
+    background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png)
+}
+
+header{
+    min-height: 15vh;
+    background-color: burlywood;
+    background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
+}
+
+main{
+    min-height: 80vh;
+    background-color:white;
+    object-fit: contain;
+    background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
+    
+}
+
+.navbar{
+    background-color: rgb(160, 124, 78);
+}
+footer{
+    min-height: 5vh;
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .3rem;
+    border-top: 1px solid black;
+
+}
+
+
+
+/* Header  */
+
+.DivHeader{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+.imgHeader{
+    height: 4rem;
+}
+
+/* Main  */
+
+.carousel img{
+    height: 50vh;
+    object-fit: cover;
+}
+
+.img1{
+    object-position: 50%;
+}
+.img2{
+    object-position: 20% 55%;
+}
+.img3{
+    object-fit: cover;
+    object-position: 20% 35%;
+}
+.img4{
+    object-position: 20% 35%;
+}
+
+.carritoIcono{
+    position: absolute;
+    bottom: 1.5em;
+    right: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+}
+
+.active{
+    background-color: burlywood !important;
+}
+
+#divCheck{
+    background-color: rgba(222, 184, 135, 0.856);
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.historia{
+    color:rgb(255, 255, 255);
+    text-shadow: 1px 2px  rgb(0, 0, 0);
+    font-size: 1.2em;
+    background-color: rgba(160, 124, 78, 0.801);
+    font-family: 'Varela Round', sans-serif;
+    border-radius: 1.5em;
+    padding: 1em;
+}
+
+li>a{
+    text-decoration: none;
+    text-transform: none;
+}
+
+#nav{
+    border:1px solid  black;
+}
+
+#divFooter{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+#divFooter img{
+    height: 2rem;
+}
+
+    @media (min-width: 320px) and (max-width : 500px){
+        .imgHeader{
+            height: 2rem;
+        }
+        .carousel img{
+            height: 20vh;
+        }
+        .historia{
+            font-size: 0.8em;
+        }
+    }
