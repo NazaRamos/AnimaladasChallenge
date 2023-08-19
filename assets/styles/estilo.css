@@ -1,20 +1,30 @@
-*{
+**{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 
 header{
-    min-height: 15vh;
+    padding: 0;
+    margin: 0;
+    background-color: red;
+}
+
+
+body{
+    background-color: blue;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
     background-color: lightblue;
 }
-
-main{
-    min-height: 80vh;
-    background-color: lightcoral;
-}
-
-footer{
-    min-height: 5vh;
-    background-color: lightcyan;
+.container {
+    background-color: lightsalmon;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
