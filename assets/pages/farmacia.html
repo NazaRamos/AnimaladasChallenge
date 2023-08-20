@@ -41,11 +41,11 @@
     <main class="d-flex flex-column align-items-center p-5 gap-5">
         <div id="divCheck" class="d-flex flex-wrap gap-5 justify-content-center align-items-center">
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                <input class="form-check-input" type="checkbox" value="perros" role="switch" id="flexSwitchCheckDefault" />
                 <label class="form-check-label text-dark fw-bold" for="flexSwitchCheckDefault">Perros</label>
             </div>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+                <input class="form-check-input" type="checkbox" value="gatos" role="switch" id="flexSwitchCheckChecked" />
                 <label class="form-check-label text-dark fw-bold" for="flexSwitchCheckChecked">Gatos</label>
             </div>
             <div class="d-flex" role="search">
@@ -58,24 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
-            <div class="card" style="width: 18rem">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
+        <div id="contenedorCartas" class="d-flex flex-wrap align-items-center justify-content-center gap-2"></div>
     </main>
     <footer>
         <div class="w-25 ps-5" id="divFooter">
@@ -90,6 +73,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script src="../js/farmacia.js"></script>
+        <script type="module" src="../js/farmacia.js"></script>
 </body>
 
 </html>
