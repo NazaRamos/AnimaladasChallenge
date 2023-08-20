@@ -19,12 +19,12 @@ function filtrarPorNombre ( productos, nombre){
 }
 
 function mostrarCardError2 (contenedor){
-    contenedor.innerHTML = `<section class="card col-11 col-sm-3">
+    contenedor.innerHTML = `<section class="card col-11 col-4">
     <div class="card-body d-flex flex-column">
-        <h2 class="card-title">No results found</h2>
-        <p class="card-text">We couldn't find what you searched for.</p>
+    <img class="card-img img-fluid" src="../images/oops-png-4-1024x1024.png" class="card-img-top" alt="..." />
+        <h2 class="card-title">No se han encontrado resultados.</h2>
         <div class="d-flex justify-content-around align-items-center">
-            <h3 class="card-title">Try searching again</h3>
+            <h5 class="card-title">Intentalo de nuevo</h5>
         </div>
     </div>
 </section>`

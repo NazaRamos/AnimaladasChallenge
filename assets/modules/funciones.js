@@ -1,8 +1,8 @@
 function crearCard ( producto ){
     return `<div class="card" style="width: 18rem">
-    <img class="img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
+    <img class="card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
     <div class="card-body">
-        <h5 class="card-title">${producto.producto}</h5>
+        <h6 class="card-title">${producto.producto}</h6>
         <p class="card-text">$${producto.precio}</p>
         <a href="./detalles.html?id=${producto._id}" class="btn btn-primary">Ver detalles</a>
         <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
