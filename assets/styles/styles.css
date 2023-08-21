@@ -16,10 +16,10 @@ header {
 
 main {
     min-height: 80vh;
-    background-color: white;
+    background-color:white;
     object-fit: contain;
     background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
-
+    
 }
 
 .navbar {
@@ -115,6 +115,7 @@ footer {
     font-family: 'Varela Round', sans-serif;
     border-radius: 1.5em;
     padding: 1em;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.568);
 }
 
 li>a {
@@ -231,20 +232,20 @@ body::-webkit-scrollbar-thumb {
 .form-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff006a;
-    color: #ffffff;
+    background-color: burlywood;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.form-button:hover {
+  }
+  
+  .form-button:hover {
     background-color: #0056b3;
-}
-
-.form-button-alt {
+  }
+  
+  .form-button-alt {
     background-color: #55c4b4;
 }
 
@@ -336,4 +337,4 @@ body::-webkit-scrollbar-thumb {
     font-weight: bold;
     margin-top: 20px;
     text-align: right;
-}
+  }
