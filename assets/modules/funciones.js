@@ -4,7 +4,7 @@ function crearCard ( producto ){
     <div class="card-body">
         <h6 class="card-title">${producto.producto}</h6>
         <p class="card-text">$${producto.precio}</p>
-        <a href="./detalles.html?id=${producto._id}" class="btn btn-primary">Ver detalles</a>
+        <a href="./detalles.html?_id=${producto._id}" class="btn btn-primary">Ver detalles</a>
         <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path
