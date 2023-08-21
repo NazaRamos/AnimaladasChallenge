@@ -1,10 +1,11 @@
 function crearCard ( producto ){
-    return `<div class="card" style="width: 18rem">
+    return `<div class="card shadow mb-5 bg-body-tertiary rounded" style="width: 18rem">
+    <h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>
     <img class="card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
     <div class="card-body">
-        <h6 class="card-title">${producto.producto}</h6>
-        <p class="card-text">$${producto.precio}</p>
-        <a href="./detalles.html?_id=${producto._id}" class="btn btn-primary">Ver detalles</a>
+        <h6 class="card-title" id="producto">${producto.producto}</h6>
+        <p class="card-text" id="precio">$${producto.precio}</p>
+        <a href="./detalles.html?_id=${producto._id}" class="btn btn-primary" id="boton">Ver detalles</a>
         <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path
@@ -18,7 +19,13 @@ export function mostrarProductos ( productos, contenedor, categoria ){
     let template = ''
     let productosAMostrar = productos.filter( productoActual => productoActual.categoria === categoria )
     for ( let producto of productosAMostrar ){
-        template += crearCard(producto)
+        if(producto.disponibles <= 5 && producto.disponibles > 0){
+            template += crearCard(producto)
+        } else if (producto.disponibles > 5){
+            template += crearCard(producto).replace('<h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>', "")
+        } else if (producto.disponibles === 0) {
+            template += crearCard(producto).replace('<h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>', '<h6 class="mensajeAgotado">Agotado!</h6>')
+        }
     }
     contenedor.innerHTML = template
 }

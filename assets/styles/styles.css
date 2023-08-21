@@ -16,10 +16,6 @@ header{
 
 main{
     min-height: 80vh;
-    background-color:white;
-    object-fit: contain;
-    background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
-    
 }
 
 .navbar{
@@ -110,6 +106,7 @@ footer{
     font-family: 'Varela Round', sans-serif;
     border-radius: 1.5em;
     padding: 1em;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.568);
 }
 
 li>a{
@@ -223,8 +220,8 @@ body::-webkit-scrollbar-thumb {
   .form-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff006a;
-    color: #ffffff;
+    background-color: burlywood;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -233,7 +230,7 @@ body::-webkit-scrollbar-thumb {
   }
   
   .form-button:hover {
-    background-color: #0056b3;
+    background-color: rgba(160, 124, 78, 0.904);
   }
   
   .form-button-alt {
@@ -327,4 +324,70 @@ body::-webkit-scrollbar-thumb {
     font-weight: bold;
     margin-top: 20px;
     text-align: right;
+  }
+
+  .mensajeUltimasUnidades{
+    width: 7rem;
+    background-color: rgba(255, 255, 0, 0.685);
+    font-size: 0.8em;
+    color: black;
+    border-radius: 1em;
+    padding: 0.3em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+
+  .mensajeAgotado{
+    width: 4rem;
+    background-color: rgba(255, 0, 0, 0.808);
+    font-size: 0.8em;
+    color: black;
+    border-radius: 1em;
+    padding: 0.3em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+
+.imagenCarrito{
+    width: 2em;
+    height: 2em;
+    object-fit: cover;
+}
+
+#boton {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background:burlywood;
+    background: radial-gradient(circle, rgb(49, 49, 53) 0%, rgba(222, 184, 135, 0.705) (21, 100, 82, 0.699) 0%);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  #boton:hover {
+    background-color:rgba(160, 124, 78, 0.904);
+    transform: scale(1.1);
+  }
+
+#precio, #producto {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
+#producto:hover {
+    color: rgba(160, 124, 78, 0.904);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    border-radius: 20px;
   }
