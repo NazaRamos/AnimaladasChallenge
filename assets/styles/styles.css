@@ -82,6 +82,11 @@ footer{
     cursor: pointer;
 }
 
+.card img{
+    height: 15em;
+    object-fit: cover;
+}
+
 .active{
     background-color: burlywood !important;
 }
