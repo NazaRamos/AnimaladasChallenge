@@ -1,31 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{  
+body {
     background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png)
 }
 
-header{
+header {
     min-height: 15vh;
     background-color: burlywood;
     background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
 }
 
-main{
+main {
     min-height: 80vh;
-    background-color:white;
+    background-color: white;
     object-fit: contain;
     background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
-    
+
 }
 
-.navbar{
+.navbar {
     background-color: rgb(160, 124, 78);
 }
-footer{
+
+footer {
     min-height: 5vh;
     background-color: burlywood;
     display: flex;
@@ -40,7 +41,7 @@ footer{
 
 /* Header  */
 
-.DivHeader{
+.DivHeader {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -48,37 +49,41 @@ footer{
     color: rgb(255, 255, 255);
 }
 
-.imgHeader{
+.imgHeader {
     height: 4rem;
 }
-@media (min-width: 320px) and (max-width : 500px){
-    .imgHeader{
+
+@media (min-width: 320px) and (max-width : 500px) {
+    .imgHeader {
         height: 2rem;
     }
 }
 
 /* Main  */
 
-.carousel img{
+.carousel img {
     height: 50vh;
     object-fit: cover;
 }
 
-.img1{
+.img1 {
     object-position: 50%;
 }
-.img2{
+
+.img2 {
     object-position: 20% 55%;
 }
-.img3{
+
+.img3 {
     object-fit: cover;
     object-position: 20% 35%;
 }
-.img4{
+
+.img4 {
     object-position: 20% 35%;
 }
 
-.carritoIcono{
+.carritoIcono {
     position: absolute;
     bottom: 1.5em;
     right: 1.5em;
@@ -87,24 +92,24 @@ footer{
     cursor: pointer;
 }
 
-.card img{
+.card img {
     height: 15em;
     object-fit: cover;
 }
 
-.active{
+.active {
     background-color: burlywood !important;
 }
 
-#divCheck{
+#divCheck {
     background-color: rgba(222, 184, 135, 0.856);
     padding: 1em;
     border-radius: 0.5em;
 }
 
-.historia{
-    color:rgb(255, 255, 255);
-    text-shadow: 1px 2px  rgb(0, 0, 0);
+.historia {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px rgb(0, 0, 0);
     font-size: 1.2em;
     background-color: rgba(160, 124, 78, 0.801);
     font-family: 'Varela Round', sans-serif;
@@ -112,36 +117,38 @@ footer{
     padding: 1em;
 }
 
-li>a{
+li>a {
     text-decoration: none;
     text-transform: none;
 }
 
-#nav{
-    border:1px solid  black;
+#nav {
+    border: 1px solid black;
 }
 
-#divFooter{
+#divFooter {
     display: flex;
     justify-content: center;
     gap: 1em;
 }
 
-#divFooter img{
+#divFooter img {
     height: 2rem;
 }
 
-    @media (min-width: 320px) and (max-width : 500px){
-        .imgHeader{
-            height: 2rem;
-        }
-        .carousel img{
-            height: 20vh;
-        }
-        .historia{
-            font-size: 0.8em;
-        }
+@media (min-width: 320px) and (max-width : 500px) {
+    .imgHeader {
+        height: 2rem;
     }
+
+    .carousel img {
+        height: 20vh;
+    }
+
+    .historia {
+        font-size: 0.8em;
+    }
+}
 
 body::-webkit-scrollbar {
     width: 10px;
@@ -173,9 +180,9 @@ body::-webkit-scrollbar-thumb {
     min-width: 100vw;
     margin: 0;
     background-color: #f4f4f4;
-  }
-  
-  .form-container {
+}
+
+.form-container {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
@@ -184,43 +191,44 @@ body::-webkit-scrollbar-thumb {
     max-width: 90%;
     box-sizing: border-box;
     animation: fadeInUp 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeInUp {
+}
+
+@keyframes fadeInUp {
     0% {
-      transform: translateY(20px);
-      opacity: 0;
+        transform: translateY(20px);
+        opacity: 0;
     }
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-  }
-  
-  .form-input {
+}
+
+.form-input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s;
-  }
-  
-  .form-input:focus {
+}
+
+.form-input:focus {
     border-color: #007bff;
-  }
-  
-  .form-button {
+}
+
+.form-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ff006a;
@@ -230,101 +238,102 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .form-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .form-button-alt {
-    background-color: #55c4b4;
-  }
-  
-  .form-button-alt:hover {
-    background-color: #4aa69e;
-  }
+}
 
-  .map{
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+.form-button-alt {
+    background-color: #55c4b4;
+}
+
+.form-button-alt:hover {
+    background-color: #4aa69e;
+}
+
+.map {
     border-radius: 15px;
     width: 20em;
     height: 20em;
     padding: 1em;
-  }
+}
 
-  @media only screen and (min-width: 320px) and (max-width: 700px){
-    .divContactoMapa{
+@media only screen and (min-width: 320px) and (max-width: 700px) {
+    .divContactoMapa {
         flex-direction: column;
         justify-content: center;
     }
-    .form-container{
+
+    .form-container {
         align-self: center;
     }
-  }
+}
 
-  @media only screen and (min-width: 850px){
-    .map{
+@media only screen and (min-width: 850px) {
+    .map {
         width: 30em;
         height: 30em;
     }
-  }
+}
 
-  .cart-title {
+.cart-title {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  
-  .cart-card {
+}
+
+.cart-card {
     background-color: #f4f4f4;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     max-width: 400px;
     padding: 20px;
-  }
-  
-  .item {
+}
+
+.item {
     display: flex;
     margin-bottom: 20px;
-  }
-  
-  .item-image {
+}
+
+.item-image {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 5px;
     margin-right: 10px;
-  }
-  
-  .item-details {
+}
+
+.item-details {
     flex-grow: 1;
-  }
-  
-  .item-name {
+}
+
+.item-name {
     font-size: 18px;
     font-weight: bold;
-  }
-  
-  .item-description {
+}
+
+.item-description {
     font-size: 14px;
     color: #777;
-  }
-  
-  .item-price {
+}
+
+.item-price {
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
-  }
-  
-  .item-quantity {
+}
+
+.item-quantity {
     width: 3rem;
     height: 1.5rem;
     margin-top: 10px;
-  }
-  
-  
-  .total {
+}
+
+
+.total {
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
     text-align: right;
-  }
+}
