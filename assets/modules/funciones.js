@@ -4,7 +4,7 @@ function crearCard ( producto ){
     <div class="card-body">
         <h6 class="card-title">${producto.producto}</h6>
         <p class="card-text">$${producto.precio}</p>
-        <a href="./detalles.html?id=${producto._id}" class="btn btn-primary">Ver detalles</a>
+        <a href="./detalles.html?_id=${producto._id}" class="btn btn-primary">Ver detalles</a>
         <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path
@@ -17,9 +17,42 @@ function crearCard ( producto ){
 export function mostrarProductos ( productos, contenedor, categoria ){
     let template = ''
     let productosAMostrar = productos.filter( productoActual => productoActual.categoria === categoria )
-    console.log(productosAMostrar)
     for ( let producto of productosAMostrar ){
         template += crearCard(producto)
     }
     contenedor.innerHTML = template
+}
+
+export function filtrarPorMascota ( productos, array ){
+    if ( array.length == 0 ){
+        return productos
+    } else {
+        const filtrado = productos.filter( producto => {
+            if ( array.includes('perros') && array.includes('gatos')){
+                return true
+            } else if ( array.includes('perros')){
+                return producto.producto.includes( array ) || producto.producto.includes ('cachorros') || producto.producto.includes('Cepillo') || producto.producto.includes('Hueso') || producto.producto.includes('pelota')
+            } else if (array.includes('gatos')){
+                return producto.producto.includes( array ) || producto.producto.includes( 'gatitos' ) || producto.producto.includes('Cepillo') || producto.producto.includes('Rata') || producto.producto.includes('Peluche')
+            }
+        })
+        return filtrado
+    }
+}
+
+export function filtrarPorNombre ( productos, nombre){
+    const filtrado = productos.filter( producto => producto.producto.toLowerCase().includes ( nombre.toLowerCase() ) )
+    return filtrado
+}
+
+export function mostrarCardError2 (contenedor){
+    contenedor.innerHTML = `<section class="card col-11 col-4">
+    <div class="card-body d-flex flex-column">
+    <img class="card-img img-fluid" src="../images/oops-png-4-1024x1024.png" class="card-img-top" alt="..." />
+        <h2 class="card-title">No se han encontrado resultados.</h2>
+        <div class="d-flex justify-content-around align-items-center">
+            <h5 class="card-title">Intentalo de nuevo</h5>
+        </div>
+    </div>
+</section>`
 }

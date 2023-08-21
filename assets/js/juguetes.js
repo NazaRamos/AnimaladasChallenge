@@ -1,8 +1,11 @@
 const contenedor = document.getElementById('contenedorCartas2')
+const contenedorFiltro = document.getElementById('divCheck')
+const input = document.getElementById('searchEvento')
 
 import { mostrarProductos } from '../modules/funciones.js'
-
-
+import { filtrarPorMascota } from '../modules/funciones.js'
+import { filtrarPorNombre } from '../modules/funciones.js'
+import { mostrarCardError2 } from '../modules/funciones.js'
 
 fetch('https://mindhub-xj03.onrender.com/api/petshop')
     .then ( response => response.json() )
@@ -14,6 +17,7 @@ fetch('https://mindhub-xj03.onrender.com/api/petshop')
             e.preventDefault()
             const checked = document.querySelectorAll('input[type=checkbox]:checked')
             const arrayChecked = Array.from( checked ).map( checkbox => checkbox.value)
+            console.log(arrayChecked)
             const filtradoCategorias = filtrarPorMascota ( arrayProductos, arrayChecked)
             const filtradoNombre = filtrarPorNombre ( filtradoCategorias, input.value)
             if ( filtradoNombre.length == 0 ){
@@ -24,18 +28,3 @@ fetch('https://mindhub-xj03.onrender.com/api/petshop')
         })
     })
     .catch( error => console.log(error) )
-
-    
-function filtrarPorNombre ( productos, nombre){
-    const filtrado = productos.filter( producto => producto.producto.toLowerCase().includes ( nombre.toLowerCase() ) )
-    return filtrado
-}
-
-function filtrarPorMascota ( productos, array ){
-    if ( array.length == 0 ){
-        return productos
-    } else {
-        const filtrado = productos.filter( producto => array.includes( producto.categoria ) )
-        return filtrado
-    }
-}
