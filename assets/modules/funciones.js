@@ -1,4 +1,6 @@
 function crearCard ( producto ){
+    let carrito = JSON.parse( localStorage.getItem( "carrito" ) ) || []
+    const car = carrito.some( item => item._id == producto._id) ? "text-warning" : ""
     return `<div class="card shadow mb-5 bg-body-tertiary rounded" style="width: 18rem">
     <h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>
     <img class="card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
@@ -6,7 +8,7 @@ function crearCard ( producto ){
         <h6 class="card-title" id="producto">${producto.producto}</h6>
         <p class="card-text" id="precio">$${producto.precio}</p>
         <a href="./detalles.html?_id=${producto._id}" class="btn btn-primary" id="boton">Ver detalles</a>
-        <svg class="carritoIcono" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        <svg class="carritoIcono ${car}" data-id='${producto._id}' xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path
                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -62,4 +64,26 @@ export function mostrarCardError2 (contenedor){
         </div>
     </div>
 </section>`
+}
+
+function crearCardCarrito ( producto ){
+    return `<div class="cart-card">
+    <h2 class="cart-title">Carrito de Compra</h2>
+    <div class="item">
+      <img class="item-image" src="${producto.imagen}" alt="">
+      <div class="item-details">
+        <span class="item-name">${producto.producto}</span>
+        <span class="item-price">$${producto.precio}</span>
+        <input class="item-quantity" type="number" min="0" value="0">
+      </div>
+    </div>`
+}
+
+export function mostrarProductosCarrito ( productos, contenedor ){
+    let template = ''
+    console.log(productos)
+    for ( let producto of productos ){
+        template += crearCardCarrito(producto)
+    }
+    contenedor.innerHTML = template
 }
