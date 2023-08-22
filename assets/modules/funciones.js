@@ -80,11 +80,11 @@ function crearCardCarrito ( producto ){
   </div>`
 }
 
-export function mostrarProductosCarrito ( productos, contenedor ){
+export function mostrarProductosCarrito(productos, contenedor, total) {
     let template = ''
-    console.log(productos)
     for ( let producto of productos ){
         template += crearCardCarrito(producto)
     }
+    template += `<div class="total">Total: $${total}</div>`
     contenedor.innerHTML = template
 }
