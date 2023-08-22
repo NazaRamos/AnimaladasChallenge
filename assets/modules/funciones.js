@@ -85,6 +85,15 @@ export function mostrarProductosCarrito(productos, contenedor, total) {
     for ( let producto of productos ){
         template += crearCardCarrito(producto)
     }
-    template += `<div class="total">Total: $${total}</div>`
+    template += 
+    `<div class="total">Total: $${total}</div>
+    <a href="#" class=" btn btn-primary" id="botonCompraRealizada">Comprar</a>`
     contenedor.innerHTML = template
+
+    const botonCompraRealizada = document.getElementById('botonCompraRealizada')
+    botonCompraRealizada.addEventListener('click', () => {
+    divCarrito.innerHTML = '<h2 id="mensajeCarritoComprado" class="mt-5 p-4" >Tu compra ha sido un exito!</h2>'
+    return divCarrito
+})
 }
+

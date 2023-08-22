@@ -1,6 +1,8 @@
 const mainCarrito = document.getElementById('mainCarrito')
 const divCarrito = document.getElementById('divCarrito')
 
+console.log(botonCompraRealizada)
+
 let carrito = JSON.parse( localStorage.getItem( "carrito" ) ) || []
 let total = 0;
 for ( let producto of carrito ){
