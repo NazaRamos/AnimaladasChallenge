@@ -19,7 +19,7 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
 })
 
 function crearTarjeta(objeto){
-    return `<section class="card" style="width: 18rem;">
+    return `<section class="card shadow mb-5 bg-body-tertiary rounded" style="width: 18rem;">
                 <img src="${objeto.imagen}" class="card-img-top" alt="school_book_fair">
                 <div class="card-body d-flex flex-column align-items-center text-center">
                     <h5 class="card-title">${objeto.producto}</h5>

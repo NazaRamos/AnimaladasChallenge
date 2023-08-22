@@ -398,3 +398,11 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     border: 1px solid black;
   }
+
+  .botonBorradoProducto{
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
