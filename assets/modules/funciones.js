@@ -3,7 +3,7 @@ function crearCard ( producto ){
     const car = carrito.some( item => item._id == producto._id) ? "text-warning" : ""
     return `<div class="card shadow mb-5 bg-body-tertiary rounded" style="width: 18rem">
     <h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>
-    <img class="p-3 card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
+    <img class="card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
     <div class="card-body">
         <h6 class="card-title" id="producto">${producto.producto}</h6>
         <p class="card-text" id="precio">$${producto.precio}</p>
@@ -66,7 +66,7 @@ export function mostrarCardError2 (contenedor){
 </section>`
 }
 
-function crearCardCarrito ( producto ){
+function crearCardCarrito(producto) {
     return `<div class="cart-card position-relative">
     <div class="item">
       <img class="botonBorradoProducto" data-botonborrar='${producto._id}' src="../images/x_circle_icon_174835.png" alt="">
@@ -75,10 +75,41 @@ function crearCardCarrito ( producto ){
         <span class="item-name">${producto.producto}</span>
         <span class="item-price">$${producto.precio}</span>
         <input class="item-quantity" id="${producto._id}" data-input="${producto._id}" type="number" min="1" max="${producto.disponibles}" value="1">
+        <div class="max-quantity-message" style="color: red;"></div>
       </div>
     </div>
-  </div>`
+  </div>`;
 }
+
+function updateMaxQuantityMessage(inputElement) {
+    const productId = inputElement.getAttribute("data-input");
+    const maxQuantity = parseInt(inputElement.getAttribute("max"));
+    const currentQuantity = parseInt(inputElement.value);
+    const messageElement = inputElement.parentElement.querySelector(".max-quantity-message");
+
+    if (currentQuantity > maxQuantity) {
+        messageElement.textContent = `Lo sentimos, de momento contamos solamente con ${maxQuantity} unidades.`;
+    } 
+    else if (currentQuantity === maxQuantity) {
+        messageElement.textContent = `Lo sentimos, de momento contamos solamente con ${maxQuantity} unidades.`;
+    }
+    else {
+        messageElement.textContent = "";
+    }
+}
+
+document.addEventListener("input", function (event) {
+    if (event.target.classList.contains("item-quantity")) {
+        updateMaxQuantityMessage(event.target);
+    }
+});
+
+document.addEventListener("change", function (event) {
+    if (event.target.classList.contains("item-quantity")) {
+        updateMaxQuantityMessage(event.target);
+    }
+});
+
 
 export function mostrarProductosCarrito(productos, contenedor, total) {
     let template = ''
