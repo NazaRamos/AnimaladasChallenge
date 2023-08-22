@@ -3,7 +3,7 @@ function crearCard ( producto ){
     const car = carrito.some( item => item._id == producto._id) ? "text-warning" : ""
     return `<div class="card shadow mb-5 bg-body-tertiary rounded" style="width: 18rem">
     <h6 class="mensajeUltimasUnidades">Ultimas unidades!</h6>
-    <img class="card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
+    <img class="p-3 card-img img-fluid" src="${producto.imagen}" class="card-img-top" alt="..." />
     <div class="card-body">
         <h6 class="card-title" id="producto">${producto.producto}</h6>
         <p class="card-text" id="precio">$${producto.precio}</p>
