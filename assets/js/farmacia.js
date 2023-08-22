@@ -10,31 +10,33 @@ import { mostrarCardError2 } from '../modules/funciones.js'
 
 let arrayProductos = []
 let carrito = JSON.parse( localStorage.getItem( "carrito" ) ) || []
-console.log(carrito)
 
 fetch('https://mindhub-xj03.onrender.com/api/petshop')
     .then ( response => response.json() )
     .then ( response => {
         arrayProductos = response
         mostrarProductos ( arrayProductos, contenedor, "farmacia")
-        contenedorFiltro.addEventListener( 'input', e => {
-            e.preventDefault()
-            const checked = document.querySelectorAll('input[type=checkbox]:checked')
-            const arrayChecked = Array.from( checked ).map( checkbox => checkbox.value)
-            const filtradoCategorias = filtrarPorMascota ( arrayProductos, arrayChecked)
-            const filtradoNombre = filtrarPorNombre ( filtradoCategorias, input.value)
-            if ( filtradoNombre.length == 0 ){
-                mostrarCardError2(contenedor)
-            } else {
-                mostrarProductos ( filtradoNombre, contenedor, "farmacia" )
-            }
-        })
     })
     .catch( error => console.log(error) )
 
-    main.addEventListener( 'click', e => {
-        const idSeleccionado = e.target.dataset.id
-        if ( idSeleccionado ){
+contenedorFiltro.addEventListener( 'input', ev => {
+    ev.preventDefault()
+    const checked = document.querySelectorAll('input[type=checkbox]:checked')
+    const arrayChecked = Array.from( checked ).map( checkbox => checkbox.value)
+    const filtradoCategorias = filtrarPorMascota ( arrayProductos, arrayChecked)
+    const filtradoNombre = filtrarPorNombre ( filtradoCategorias, input.value)
+    if ( filtradoNombre.length == 0 ){
+        mostrarCardError2(contenedor)
+    } else {
+        mostrarProductos ( filtradoNombre, contenedor, "farmacia" )
+    }
+})
+
+main.addEventListener( 'click', e => {
+    const idSeleccionado = e.target.dataset.id
+    if ( idSeleccionado ){
+        let productoSeleccionado = arrayProductos.find( producto => producto._id == idSeleccionado )
+        if ( productoSeleccionado.disponibles > 0 ){
             const articulo = carrito.find( favorito => favorito._id == idSeleccionado )
             if ( articulo ){
                 const indicePersonaje = carrito.findIndex( favorito => favorito._id == idSeleccionado)
@@ -43,7 +45,8 @@ fetch('https://mindhub-xj03.onrender.com/api/petshop')
                 const productoFavorito = arrayProductos.find( producto => producto._id == idSeleccionado )
                 carrito.push(productoFavorito)
             }
-        e.target.classList.toggle( 'text-warning' )
-        localStorage.setItem( "carrito", JSON.stringify(carrito) )
+            e.target.classList.toggle( 'text-warning' )
+            localStorage.setItem( "carrito", JSON.stringify(carrito) )
         }
-    })
+    }
+})

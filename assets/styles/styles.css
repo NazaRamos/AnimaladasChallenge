@@ -399,7 +399,7 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid black;
   }
 
-  #botonBorradoProducto{
+  .botonBorradoProducto{
     width: 1.5em;
     height: 1.5em;
     position: absolute;
