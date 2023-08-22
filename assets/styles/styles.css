@@ -5,13 +5,13 @@
 }
 
 body{  
-  background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png)
+  background-image: url(../images/Background.png)
 }
 
 header{
   min-height: 15vh;
   background-color: burlywood;
-  background-image: url(../images/fondo-colorido-modelo-huellas-pata-perro-o-gato_1017-30662-removebg-preview.png);
+  background-image: url(../images/Background.png);
 }
 
 main{
