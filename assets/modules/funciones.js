@@ -67,23 +67,44 @@ export function mostrarCardError2 (contenedor){
 }
 
 function crearCardCarrito ( producto ){
-    return `<div class="cart-card">
-    <h2 class="cart-title">Carrito de Compra</h2>
+    return `<div class="cart-card position-relative">
     <div class="item">
+    <img id="botonBorradoProducto" src="../images/x_circle_icon_174835.png" alt="">
       <img class="item-image" src="${producto.imagen}" alt="">
-      <div class="item-details">
+      <div class="item-details d-flex flex-column">
         <span class="item-name">${producto.producto}</span>
         <span class="item-price">$${producto.precio}</span>
-        <input class="item-quantity" type="number" min="0" value="0">
+        <input class="item-quantity" id="cardCarritoValue" type="number" min="0" value="0">
       </div>
+    </div>
     </div>`
 }
 
-export function mostrarProductosCarrito ( productos, contenedor ){
-    let template = ''
-    console.log(productos)
-    for ( let producto of productos ){
-        template += crearCardCarrito(producto)
+export function mostrarProductosCarrito(productos, contenedor) {
+    let template = `<div class="cart-card">
+      <h2 class="cart-title">Carrito de Compra</h2>`
+
+    for (let index = 0; index < productos.length; index++) {
+        template += crearCardCarrito(productos[index], index);
     }
-    contenedor.innerHTML = template
+    template += `<div class="total">Total: $0.00</div>`;
+
+    contenedor.innerHTML = template;
+
+    const totalElement = contenedor.querySelector(".total");
+    const cantidadInputs = contenedor.querySelectorAll(".item-quantity");
+    let total = 0;
+
+    for (const input of cantidadInputs) {
+        input.addEventListener("change", () => {
+            total = 0; 
+            for (const [index, input] of cantidadInputs.entries()) {
+                const cantidad = parseInt(input.value);
+                const precio = parseFloat(productos[index].precio);
+                total += cantidad * precio;
+            }
+
+            totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
+        });
+    }
 }
