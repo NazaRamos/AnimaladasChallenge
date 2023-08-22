@@ -18,7 +18,8 @@ fetch('https://mindhub-xj03.onrender.com/api/petshop')
         if (carrito.length === 0){
                 divCarrito.innerHTML = '<h2 id="mensajeCarritoVacio" class="mt-5 p-4" >Parece que tu carrito esta vacio.</h2>'
             } else {
-                mostrarProductosCarrito ( carrito, divCarrito, total )            
+                mostrarProductosCarrito ( carrito, divCarrito, total )
+                           
             }
         })
     .catch( error => console.log(error) )
